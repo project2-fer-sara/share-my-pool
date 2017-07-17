@@ -18,6 +18,7 @@ const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
+const signup = require('./routes/signup')
 const router = express.Router();
 
 const app = express();

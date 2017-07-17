@@ -1,14 +1,10 @@
 $(document).ready(function(){
-  var ironhackBCN = {
-    lat: 41.3977381,
-    lng: 2.090471916
-  };
+
 
   var markers = [];
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
-    center: ironhackBCN
   });
 
   var center = {
@@ -72,7 +68,7 @@ $(document).ready(function(){
 
   function placePools(map, pools){
     var bounds = new google.maps.LatLngBounds();
-    restaurants.forEach(function(pool){
+    pool.forEach(function(pool){
         var center = {
           lat: pool.location.coordinates[0],
           lng: pool.location.coordinates[1]

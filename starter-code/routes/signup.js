@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Pool = require('../models/Pool');
 
 /* GET home page. */
-router.route('/')
+router.route('/signup')
   .get((req, res, next) => {
-    res.render('auth/login');
+    res.render('auth/signup');
   });
 
 module.exports = router;
