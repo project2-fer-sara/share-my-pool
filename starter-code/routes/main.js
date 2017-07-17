@@ -27,8 +27,6 @@ router.route('/')
     };
 		console.log(newPool);
 
-  	const Pool = new Pool(newPool);
-
   	Pool.save((error) => {
   		if (error) {
   			next(error);

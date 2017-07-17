@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
-const User = require('./User');
-const Pool = require('./Pool');
+const Schema = mongoose.Schema;
 
 const RentalSchema = mongoose.Schema({
-  pool: Pool,
-  guest: User,
+  pool: {
+    type: Schema.Types.ObjectId,
+    ref: 'Pool'
+  },
+  guest: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   startDate: Date,
   endDate: Date,
   price: String,

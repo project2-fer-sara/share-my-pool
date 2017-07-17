@@ -1,3 +1,4 @@
+require('dotenv').load();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -7,12 +8,11 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const passport = require('passport');
-require('dotenv').load();
 
-const User = require('./User');
-const Pool = require('./Pool');
-const Rental = require('./Rental');
-const Review = require('./Review');
+const User = require('./models/User');
+const Pool = require('./models/Pool');
+const Rental = require('./models/Rental');
+const Review = require('./models/Review');
 
 const main = require('./routes/main');
 const users = require('./routes/users');

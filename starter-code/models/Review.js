@@ -1,21 +1,19 @@
-const mongoose     = require('mongoose');
-const User = require('./User');
-const Pool = require('./Pool');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 const ReviewSchema = mongoose.Schema({
-
-  guest: User,
-  title: String,
-  description: String,
-  starsis:Number,
-},{
-  timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
-
-  guest: User,
+  guest: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   title: String,
   description: String,
   starsis: Number,
-  pool: Pool
-},{
+  pool: {
+    type: Schema.Types.ObjectId,
+    ref: 'Pool'
+  },
+}, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'

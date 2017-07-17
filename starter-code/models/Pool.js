@@ -1,8 +1,11 @@
 const mongoose     = require('mongoose');
-const User = require('./User');
-const Review = require('./Review');
+const Schema = mongoose.Schema;
+
 const PoolSchema = mongoose.Schema({
-  host: User,
+  host: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   address: String,
   numberOfGuests: Number,
   poolPic: String,
@@ -13,13 +16,11 @@ const PoolSchema = mongoose.Schema({
     smoke: Boolean,
   }
 },{
-  poolReview: Review
-},{
-  timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
   poolAdName: String,
-  poolPic: [String],
-  owner: User,
-  poolReview: Review,
+  poolReview: {
+    type: Schema.Types.ObjectId,
+    ref: 'Review'
+  },
   location: {type: {type:String}, coordinates:[Number]}
 },{
   timestamps: {
