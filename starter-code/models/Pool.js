@@ -9,25 +9,22 @@ const PoolSchema = mongoose.Schema({
   address: String,
   numberOfGuests: Number,
   poolPic: String,
-},{
   rules: {
     children: Boolean,
     petFriendly: Boolean,
     smoke: Boolean,
-  }
-},{
+  },
   poolAdName: String,
   poolReview: {
     type: Schema.Types.ObjectId,
     ref: 'Review'
   },
-  location: {type: {type:String}, coordinates:[Number]}
+  location: {type: {type:String}, coordinates:[Number]},
 },{
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
-  }
-
+}
 });
 
 PoolSchema.index({location: '2dsphere'});

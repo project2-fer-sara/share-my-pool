@@ -17,6 +17,8 @@ const Review = require('./models/Review');
 const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
+const addPool = require('./routes/addPool');
+const router = express.Router();
 
 const app = express();
 
@@ -33,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', main);
+app.use('/addPool', addPool);
 app.use('/auth/login', router);
 app.use('/auth/signup', router);
 

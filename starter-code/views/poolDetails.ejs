@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pool Details</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3 id="poolName" data-id="<%= Pool_id %>"><%= Pool.poolAdName %></h3>
+    <p><%= Pool.address %></p>
+    <a href="/">List</a>
+    <div id="map"></div>
+  </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoe_i9MzegqCBRxkOlDzuU9laxx00CSQA">
+  </script>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/show.js"></script>
+</html>
