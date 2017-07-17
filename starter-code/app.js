@@ -9,6 +9,11 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 require('dotenv').load();
 
+const User = require('./User');
+const Pool = require('./Pool');
+const Rental = require('./Rental');
+const Review = require('./Review');
+
 const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');

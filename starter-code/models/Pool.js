@@ -1,7 +1,8 @@
 const mongoose     = require('mongoose');
-
+const User = require('./User');
+const Review = require('./Review');
 const PoolSchema = mongoose.Schema({
-  host: {user_id},
+  host: User,
   address: String,
   numberOfGuests: Number,
   poolPic: String,

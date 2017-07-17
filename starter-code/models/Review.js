@@ -1,5 +1,6 @@
 const mongoose     = require('mongoose');
-
+const User = require('./User');
+const Pool = require('./Pool');
 const ReviewSchema = mongoose.Schema({
 
   guest: User,
@@ -9,11 +10,11 @@ const ReviewSchema = mongoose.Schema({
 },{
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
 
-  guest: {user_id},
+  guest: User,
   title: String,
   description: String,
   starsis: Number,
-  pool: {pool_id}
+  pool: Pool
 },{
   timestamps: {
     createdAt: 'created_at',
