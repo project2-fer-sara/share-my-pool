@@ -1,9 +1,12 @@
 const mongoose     = require('mongoose');
 
 const ReviewSchema = mongoose.Schema({
-  fromWho: User,
+  guest: User,
+  title: String,
+  description: String,
+  starsis:Number,
+},{
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
-  infoReview: String,
 });
 
 const Review = mongoose.model('Review', ReviewSchema);
