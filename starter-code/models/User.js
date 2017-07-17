@@ -10,6 +10,13 @@ const UserSchema = mongoose.Schema({
     default: 'GUEST',
   },
   facebookID: String,
+<<<<<<< HEAD
+  googleID: String
+},{
+  timestamps: {
+    createdAt: "created_at",
+    updatedAt: "updated_at" },
+=======
   googleID: String,
   avatar: String,
 },{
@@ -17,6 +24,7 @@ const UserSchema = mongoose.Schema({
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
+>>>>>>> d7cb6431ff43381fb5325f3ad14dcc40effac886
 });
 
 const User = mongoose.model('User', UserSchema);
