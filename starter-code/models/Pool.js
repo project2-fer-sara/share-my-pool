@@ -4,8 +4,8 @@ const PoolSchema = mongoose.Schema({
   poolAdName: String,
   poolPic: [String],
   owner: User,
-  timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
   poolReview: Review,
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
 });
 
 const Pool = mongoose.model('Pool', PoolSchema);
