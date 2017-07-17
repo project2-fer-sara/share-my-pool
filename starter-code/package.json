@@ -26,10 +26,7 @@
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-<<<<<<< HEAD
-=======
     "qs": "^6.5.0",
->>>>>>> d7cb6431ff43381fb5325f3ad14dcc40effac886
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
