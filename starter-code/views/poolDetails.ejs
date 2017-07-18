@@ -1,5 +1,29 @@
-<h3 id="poolName" data-id="<%= Pool._id %>"><%= Pool.poolAdName %></h3>
-<p>
-  <%= Pool.address %>
-</p>
+<div class="poolPage">
+  <div class="infoPool">
+    <h2 id="poolName" data-id="<%= Pool._id %>"><%= Pool.poolAdName %></h2>
+    <div class="detailsPool">
+      <p>Address:
+        <i><%= Pool.address %></i>
+      </p>
+      <p>Nº Guests:
+        <i><%= Pool.numberOfGuests %></i>
+      </p>
+    </div>
+    <div class="picPool">
+      <img src="../public/images/pool.jpg" alt="poolImage">
+    </div>
+  </div>
+  <div class="rulesPool">
+    <h3>Rules:</h3>
+    <div class="rule">Children allowed?
+      <i><%= Pool.children %></i>
+    </div>
+    <div class="rule">Pets allowed?
+      <i><%= Pool.petFriendly %></i>
+    </div>
+    <div class="rule">Smoking allowed?
+      <i><%= Pool.smoke %></i>
+    </div>
+  </div>
+</div>
 <div id="map"></div>

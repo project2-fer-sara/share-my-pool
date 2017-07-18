@@ -1,18 +1,27 @@
+<div class="poolPage">
+  <div class="infoPool">
 <h2>Add Pool</h2>
 <form action="/addPool" class="addpool" method="post">
   Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!">
+  Nº Guests: <input type="text" name="numberOfGuests" placeholder="1">
   Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123">
   <input type="button" id='geocoder' value='Locate'>
   <br><br>
-  Nº Guests: <input type="text" name="numberOfGuests" placeholder="1">
-  <br><br>
+<div class="rulesPool">
   <h3>Rules:</h3>
+  <div class="rule">
   Children allowed? <input type="Boolean" name="children" placeholder="No">
+</div>
+<div class="rule">
   Pets allowed? <input type="Boolean" name="petFriendly" placeholder="No">
+</div>
+<div class="rule">
   Smoking allowed? <input type="Boolean" name="smoke" placeholder="No">
+</div>
   <input type="hidden" id="lat" name="latitude" placeholder="Latitude">
   <input type="hidden" id="lon" name="longitude" placeholder="Longitude">
   <input type="submit" id="submit" value="Submit">
-  <br><br>
 </form>
+</div>
+</div>
 <div id="map"></div>
