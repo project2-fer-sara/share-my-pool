@@ -4,7 +4,6 @@ $(document).ready(function() {
     zoom: 15,
     center: {lat: -34.397, lng: 150.644}
   });
-	console.log('Holiii!');
   var geocoder = new google.maps.Geocoder();
 
   $('#submit').on('click', function(e) {
@@ -14,7 +13,7 @@ $(document).ready(function() {
 
   function geocodeAddress(geocoder, resultsMap) {
 	  var address = document.getElementById('address').value;
-	  console.log("The adress is " + address);
+	  console.log("The address is " + address);
 	  geocoder.geocode({'address': address}, function(results, status) {
 	    if (status === 'OK') {
 	      resultsMap.setCenter(results[0].geometry.location);
