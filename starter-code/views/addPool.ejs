@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Add Pool</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <h2>Add Pool</h2>
-  <form action="/addPool" class="signup" method="post">
-    Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!"> Address: <input type="text" name="address" placeholder="False Street, Nº 123">
-    <br><br> Nº Guests: <input type="text" name="numberOfGuests" placeholder="1">
-    <br><br>
-    <h3>Rules:</h3> Children allowed? <input type="Boolean" name="children" placeholder="no"> Pets allowed? <input type="Boolean" name="petFriendly" placeholder="no"> Smoking allowed? <input type="Boolean" name="smoke" placeholder="no">
-    <input type="hidden" id="lat" name="latitude" placeholder="Latitude">
-    <input type="hidden" id="lon" name="longitude" placeholder="Longitude">
-    <input type="submit" id="submit" value="Submit">
-    <br><br>
-  </form>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoe_i9MzegqCBRxkOlDzuU9laxx00CSQA"></script>
-  <script type="text/javascript" src="/javascripts/new.js"></script>
-
-</html>
+<h2>Add Pool</h2>
+<form action="/addPool" class="signup" method="post">
+  Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!"> Address: <input type="text" name="address" placeholder="False Street, Nº 123">
+  <br><br> Nº Guests: <input type="text" name="numberOfGuests" placeholder="1">
+  <br><br>
+  <h3>Rules:</h3> Children allowed? <input type="Boolean" name="children" placeholder="no"> Pets allowed? <input type="Boolean" name="petFriendly" placeholder="no"> Smoking allowed? <input type="Boolean" name="smoke" placeholder="no">
+  <input type="hidden" id="lat" name="latitude" placeholder="Latitude">
+  <input type="hidden" id="lon" name="longitude" placeholder="Longitude">
+  <input type="submit" id="submit" value="Submit">
+  <br><br>
+</form>
+<div id="map"></div>

@@ -4,7 +4,7 @@ $(document).ready(function() {
     zoom: 15,
     center: {lat: -34.397, lng: 150.644}
   });
-
+	console.log('Holiii!');
   var geocoder = new google.maps.Geocoder();
 
   $('#submit').on('click', function(e) {

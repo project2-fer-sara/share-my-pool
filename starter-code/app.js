@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const layouts = require('express-ejs-layouts');
 
 const User = require('./models/User');
 const Pool = require('./models/Pool');
@@ -18,7 +19,7 @@ const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
-const signup = require('./routes/signup')
+const signup = require('./routes/signup');
 const router = express.Router();
 
 const app = express();
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(layouts);
 
 app.use('/', main);
 app.use('/addPool', addPool);

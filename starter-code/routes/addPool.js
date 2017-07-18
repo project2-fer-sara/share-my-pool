@@ -8,7 +8,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    console.log(req.body);
     const newPool = new Pool ( {
       poolAdName: req.body.poolAdName,
       address: req.body.address,
