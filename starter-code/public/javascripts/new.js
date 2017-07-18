@@ -5,11 +5,10 @@ $(document).ready(function() {
     center: {lat: -34.397, lng: 150.644}
   });
   var geocoder = new google.maps.Geocoder();
-
-  $('#submit').on('click', function(e) {
+	$('#geocoder').on('click', function(e){
 		e.preventDefault();
-    geocodeAddress(geocoder, map);
-  });
+		geocodeAddress(geocoder, map);
+	});
 
   function geocodeAddress(geocoder, resultsMap) {
 	  var address = document.getElementById('address').value;
