@@ -10,8 +10,20 @@ body {
   padding: 0;
   box-sizing: border-box;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #00B7FF;
+  color: #0095ff;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-image: url("../images/bg.jpg");
+  opacity: 0.3;
+  z-index: -1;
+  position: absolute;
 }
 
 h1, h2, h3 {
@@ -74,5 +86,15 @@ textarea:focus, input:focus {
   text-align: center;
 }
 
+footer {
+  color: black;
+  background-color: #858c93;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+}
 
 /*# sourceMappingURL=style.css.map */

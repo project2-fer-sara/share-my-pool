@@ -1,7 +1,7 @@
 <div class="poolPage">
   <div class="infoPool">
-    <h2>Add Pool</h2>
-    <form action="/addPool" class="addpool" method="post">
+    <h2>Update Pool</h2>
+    <form action="/addPool/<%= Pool._id %>" class="updatepool" method="post">
       Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!"> Nº Guests: <input type="text" name="numberOfGuests" placeholder="1"> Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123">
       <input type="button" id='geocoder' value='Locate'>
       <br><br>

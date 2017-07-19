@@ -43,4 +43,35 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+router.get('/:id/edit', (req, res, next) => {
+  const poolId = req.params.id;
+
+  Pool.findById(poolId, (err, Pool) => {
+    if (err) { return next(err); }
+    res.render('updatePool', { Pool: Pool });
+  });
+});
+
+router.post('/:id', (req, res, next) => {
+  const poolId = req.params.id;
+
+  /*
+   * Create a new object with all of the information from the request body.
+   * This correlates directly with the schema of Product
+   */
+  const updates = {
+      poolAdName: req.body.poolAdName,
+      numberOfGuests: req.body.numberOfGuests,
+      address: req.body.address,
+      children: req.body.children,
+      petFriendly: req.body.petFriendly,
+      smoke: req.body.smoke
+  };
+
+  Pool.findByIdAndUpdate(poolId, updates, (err, product) => {
+    if (err){ return next(err); }
+    return res.redirect(`/addPool/${req.params.id}`);
+  });
+});
+
 module.exports = router;
