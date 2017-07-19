@@ -3,8 +3,8 @@ const router = express.Router();
 const mongoose     = require('mongoose');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/users', function(req, res, next) {
+  res.render('userSite');
 });
 
 module.exports = router;

@@ -32,14 +32,14 @@ module.exports = function() {
           }
 
           if (user) {
-            return next(null, false)
+            return next(null, false);
           } else {
             const {
               username,
               email,
               password
             } = req.body;
-            const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+            const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
             const newUser = new User({
               username,
               email,

@@ -18,11 +18,12 @@ const Pool = require('./models/Pool');
 const Rental = require('./models/Rental');
 const Review = require('./models/Review');
 
+const router = express.Router();
 const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
-const router = express.Router();
+
 
 const app = express();
 mongoose.connect('mongodb://localhost/sharepool');
@@ -40,21 +41,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
 app.use(session({
-  secret: "our-passport-local-strategy-app",
+  secret: "pool-secret",
   resave: true,
   saveUninitialized: true
 }));
 
-require("./config/passport.js");
+require("./config/passport")();
 
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/', auth);
 app.use('/', main);
 app.use('/addPool', addPool);
-app.use('/', router);
-
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
