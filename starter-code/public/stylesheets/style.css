@@ -26,12 +26,46 @@ body {
   position: absolute;
 }
 
+nav {
+  color: black;
+  background-color: lightGrey;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+}
+
+.search {
+  text-align: left;
+  margin-left: 5%;
+  float: left;
+  width: 55%;
+}
+
+.search-input{
+  font-style: italic;
+  border: none;
+  background-color: transparent;
+}
+
+.go-to-profile {
+  float: left;
+  width: 40%;
+}
+
 h1, h2, h3 {
   color: #2e7fbc;
 }
 
 a {
   color: #009688;
+}
+
+.signout {
+  font-size: 0.8rem;
+  margin-left: 10px;
 }
 
 .container {
@@ -49,12 +83,26 @@ input {
   margin-right: 15px;
 }
 
-input, select, textarea {
+input, select, textarea, button {
   color: #009688;
 }
 
 textarea:focus, input:focus {
   color: #009688;
+}
+
+.edit-button {
+  clear: both;
+  float: left;
+  display: inline;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.delete-button {
+  float: left;
+  display: inline;
+  margin-top: 20px;
 }
 
 .poolPage {
@@ -96,5 +144,6 @@ footer {
   position: fixed;
   bottom: 0;
 }
+
 
 /*# sourceMappingURL=style.css.map */
