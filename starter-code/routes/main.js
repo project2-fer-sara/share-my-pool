@@ -5,7 +5,7 @@ const Pool = require('../models/Pool');
 /* GET home page. */
 router.route('/')
   .get((req, res, next) => {
-    res.render('auth/login');
+    res.render('main');
   });
 
 module.exports = router;

@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
 router.get('/signup', (req, res, next) => {
-  res.render('/auth/signup');
+  res.render('auth/signup');
 });
 
 router.post('/signup', (req, res, next) => {
@@ -57,6 +57,8 @@ router.post('/signup', (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const newUser = User({
+      name:name,
+      lastName:lastName,
       username: username,
       email: email,
       password: password,
