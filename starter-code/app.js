@@ -9,6 +9,9 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const layouts = require('express-ejs-layouts');
+const session = require("express-session");
+const flash = require("connect-flash");
+
 
 const User = require('./models/User');
 const Pool = require('./models/Pool');
@@ -19,7 +22,6 @@ const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
-const signup = require('./routes/signup');
 const router = express.Router();
 
 const app = express();
@@ -37,10 +39,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
+
+require("./config/passport.js");
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', main);
 app.use('/addPool', addPool);
-app.use('/auth/login', router);
-app.use('/auth/signup', router);
+app.use('/', router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
