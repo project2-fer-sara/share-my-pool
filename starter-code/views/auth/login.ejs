@@ -1,7 +1,25 @@
-<h2>Log In</h2>
-<form class="login" method="post">
-  <label>Username: <input type="text" name="username" placeholder="JohnDoe"></label><br>
-  <label>Password: <input type="password" name="password" placeholder="password"></label><br>
-  <input type="submit" id="login" value="Log In">
+
+<h1>Login</h1>
+<div class="form login">
+<form action="/login" method="POST" id="login">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control" placeholder="Jose">
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" placeholder="password">
+  </div>
+  <% if (typeof message != "undefined") { %>
+    <div class="error-message"><%= message %></div>
+  <% } %>
+  <div>
+    <input  id="login-btn" class="btn" type="submit" value="Log In">
+  </div>
+  <p class="account-message">
+    Create an Account!
+    <a href="/signup">Signup</a>
+  </p>
 </form>
-<a id="signup" href="/signup">Sign Up</a>
+</div>
+</div>
