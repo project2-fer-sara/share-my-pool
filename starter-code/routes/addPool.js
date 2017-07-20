@@ -12,6 +12,7 @@ router.post('/', (req, res, next) => {
     poolAdName: req.body.poolAdName,
     address: req.body.address,
     numberOfGuests: req.body.numberOfGuests,
+    price: req.body.price,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     openHours: req.body.openHours,
@@ -66,6 +67,7 @@ router.post('/:id', (req, res, next) => {
   const updates = {
       poolAdName: req.body.poolAdName,
       numberOfGuests: req.body.numberOfGuests,
+      price: req.body.price,
       address: req.body.address,
       children: req.body.children,
       petFriendly: req.body.petFriendly,
