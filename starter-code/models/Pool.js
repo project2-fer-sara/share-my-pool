@@ -11,6 +11,7 @@ const PoolSchema = mongoose.Schema({
   poolPic: String,
   startDate: Date,
   endDate: Date,
+  price: Number,
   rules: {
     openHours:Date,
     closeHours:Date,

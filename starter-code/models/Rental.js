@@ -6,12 +6,12 @@ const RentalSchema = mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'Pool'
   },
-  guest: {
+  usr: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
   startDate: Date,
-  endDate: Date,
+  guests: Number,
 });
 
 const Rental = mongoose.model('Rental', RentalSchema);

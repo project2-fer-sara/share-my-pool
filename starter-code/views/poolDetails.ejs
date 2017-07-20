@@ -23,9 +23,11 @@
     <h3>Rules:</h3>
     <div class="hours">
     <i><%= Pool.openHours %></i>
-    <i><%= Pool.closeHours %></i>  
+    <i><%= Pool.closeHours %></i>
     </div>
-
+    <div class="">
+    <i>$<%= Pool.price %></i>      
+    </div>
     <div class="rule">Children allowed?
       <i><%= Pool.children %></i>
     </div>
@@ -48,6 +50,10 @@
     <input type="hidden" id="lon" name="longitude" placeholder="Longitude" value = "<%= Pool.location.coordinates[1] %>">
   </div>
 </div>
+<form class="buttons rent" action="/addRental/" method="GET">
+ <button>Rent</button>
+</form>
+
 <div id="map"></div>
 <script type="text/javascript">
   var myPool = <%- JSON.stringify(Pool) %>;

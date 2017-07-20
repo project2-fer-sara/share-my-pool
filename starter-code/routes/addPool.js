@@ -14,6 +14,7 @@ router.post('/', (req, res, next) => {
     numberOfGuests: req.body.numberOfGuests,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
+    price: req.body.price,
     openHours: req.body.openHours,
     closeHours: req.body.closeHours,
     children: req.body.children,
