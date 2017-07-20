@@ -1,22 +1,28 @@
-<h1>Signup</h1>
+<div class="poolPage">
+<h1>Sign Up</h1>
 <form action="/signup" method="POST" id="form-container">
   <label for="name">Name</label>
   <input id="name" type="text" name="name" class="form-control" placeholder="Jose">
+  </br></br>
   <label for="lastName">Lastname</label>
   <input id="last-name" type="text" name="lastName" class="form-control" placeholder="Perez">
+  </br></br>
   <label for="username">Username</label>
   <input id="username" type="text" name="username" class="form-control" placeholder="joseperez100">
+  </br></br>
   <label for="email">Email</label>
   <input id="email" type="text" name="email"class="form-control"  placeholder="email">
+  </br></br>
   <label for="password">Password</label>
   <input id="password" type="password" name="password" class="form-control"  placeholder="Your Password">
+  </br></br>
   <label for="confirmPassword">Confirm Password</label>
   <input id="confirm-password" type="password" name="confirmPassword" class="form-control"  placeholder="type it again">
 
   <% if (typeof message !== "undefined") { %>
     <div class="error-message"><%= message %></div>
   <% } %>
-  <br><br>
+  </br>
 
   <button id="create-account"class="btn">Create account</button>
 
@@ -25,3 +31,4 @@
     <a href="login">Login</a>
   </p>
 </form>
+</div>

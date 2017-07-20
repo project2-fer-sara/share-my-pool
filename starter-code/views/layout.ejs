@@ -9,22 +9,24 @@
 <body>
   <nav>
     <div class="search">
-      <input type="text" name="search" value="search" placeholder="&#1F50D;...search">
+      <i class="fa fa-search" aria-hidden="true"></i><input class="search-input" type="text" name="search" value="search" placeholder="...search">
     </div>
     <div class="go-to-profile">
       username
+      <a class="signout" href="/">Sign Out</a>
     </div>
   </nav>
   <main>
-  <%- body %>
-  <div class="bg"></div>
+    <%- body %>
+      <div class="bg"></div>
   </main>
   <% include shared/footer %>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoe_i9MzegqCBRxkOlDzuU9laxx00CSQA">
-  </script>
-  <script type="text/javascript" src="/javascripts/new.js"></script>
-  <script type="text/javascript" src="/javascripts/show.js"></script>
+    <script src="https://use.fontawesome.com/5d1e981c47.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoe_i9MzegqCBRxkOlDzuU9laxx00CSQA">
+    </script>
+    <script type="text/javascript" src="/javascripts/new.js"></script>
+    <script type="text/javascript" src="/javascripts/show.js"></script>
 </body>
 
 </html>

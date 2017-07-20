@@ -74,4 +74,14 @@ router.post('/:id', (req, res, next) => {
   });
 });
 
+router.post('/:id/delete', (req, res, next) => {
+  const id = req.params.id;
+
+  Pool.findByIdAndRemove(id, (err, product) => {
+    if (err){ return next(err); }
+    return res.redirect('/addPool');
+  });
+
+});
+
 module.exports = router;

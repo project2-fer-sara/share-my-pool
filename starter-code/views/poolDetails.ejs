@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="picPool">
-      <img src="../public/images/pool.jpg" alt="poolImage">
+      <img src="../images/pool.jpg" alt="poolImage" height="200px;">
     </div>
   </div>
   <div class="rulesPool">
@@ -24,6 +24,14 @@
     <div class="rule">Smoking allowed?
       <i><%= Pool.smoke %></i>
     </div>
+  </div>
+  <div class="buttons">
+    <form action="/addPool/<%= Pool._id %>/edit" method="GET">
+      <button class="edit-button" type="submit">Edit</button>
+    </form>
+    <form action="/addPool/<%= Pool._id %>/delete" method="POST">
+      <button class="delete-button" type="submit">Delete</button>
+    </form>
   </div>
 </div>
 <div id="map"></div>
