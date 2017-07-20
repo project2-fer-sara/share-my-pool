@@ -8,6 +8,12 @@
       <p>Nº Guests:
         <i><%= Pool.numberOfGuests %></i>
       </p>
+      <p>
+        <i><%= Pool.startDate %></i>
+      </p>
+      <p>
+        <i><%= Pool.endDate %></i>
+      </p>
     </div>
     <div class="picPool">
       <img src="../images/pool.jpg" alt="poolImage" height="200px;">
@@ -15,6 +21,11 @@
   </div>
   <div class="rulesPool">
     <h3>Rules:</h3>
+    <div class="hours">
+    <i><%= Pool.openHours %></i>
+    <i><%= Pool.closeHours %></i>  
+    </div>
+
     <div class="rule">Children allowed?
       <i><%= Pool.children %></i>
     </div>
