@@ -2,19 +2,22 @@
   <div class="infoPool">
     <h2>Update Pool</h2>
     <form action="/addPool/<%= Pool._id %>" class="updatepool" method="post">
-      Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!"> Nº Guests: <input type="text" name="numberOfGuests" placeholder="1"> Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123">
+      Title: <input type="text" name="poolAdName" value="<%= Pool.poolAdName %>">
+      Nº Guests: <input type="text" name="numberOfGuests"  value="<%= Pool.numberOfGuests %>">
+      Price ($): <input type="text" name="price" value="<%= Pool.price %>">
+      Address: <input type="text" name="address" id="address"  value="<%= Pool.address %>">
       <input type="button" id='geocoder' value='Locate'>
       <br><br>
       <div class="rulesPool">
         <h3>Rules:</h3>
         <div class="rule">
-          Children allowed? <input type="checkbox" name="children" value="children">
+          Children allowed? <input type="checkbox" name="children" value="<%= Pool.children %>">
         </div>
         <div class="rule">
-          Pets allowed? <input type="checkbox" name="petFriendly" value="petFriendly">
+          Pets allowed? <input type="checkbox" name="petFriendly" value="<%= Pool.petFriendly %>">
         </div>
         <div class="rule">
-          Smoking allowed? <input type="checkbox" name="smoke" value="smoke">
+          Smoking allowed? <input type="checkbox" name="smoke" value="<%= Pool.smoke %>">
         </div>
         <input type="hidden" id="lat" name="latitude" placeholder="Latitude">
         <input type="hidden" id="lon" name="longitude" placeholder="Longitude">
