@@ -53,12 +53,18 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use('/', auth);
 app.use('/', main);
 app.use('/addPool', addPool);
 app.use('/users', users);
 app.use('/addRental', addRental);
 // catch 404 and forward to error handler
+
+app.use( (req, res, next) => {
+  res.locals.user = req.user;
+});
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;

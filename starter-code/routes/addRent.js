@@ -11,6 +11,7 @@ router.post('/', (req, res, next) => {
     startDate: req.body.startDate,
   });
 
+
   newRental.save((error, Rental) => {
     if (error) {
       next(error);

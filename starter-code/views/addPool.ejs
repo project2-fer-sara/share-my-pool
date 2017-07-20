@@ -2,21 +2,21 @@
   <div class="infoPool">
     <h2>Add Pool</h2>
     <form action="/addPool" class="addpool" method="post">
-      Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!">
-      Nº Guests: <input type="text" name="numberOfGuests" placeholder="1">
-      Price ($): <input type="text" name="price" placeholder="10">
-      Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123">
+      Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!" required>
+      Nº Guests: <input type="text" name="numberOfGuests" placeholder="1" required>
+      Price ($): <input type="text" name="price" placeholder="10" required>
+      Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123" required>
       <input type="button" id='geocoder' value='Locate'>
       </br></br>
-      Start Date:<input type="date" name="startDate" id="poolStartDate">
-      End Date:<input type="date" name="endDate" id="poolEndDate">
+      Start Date:<input type="date" name="startDate" id="poolStartDate" required>
+      End Date:<input type="date" name="endDate" id="poolEndDate" required>
 
       <br><br>
       <div class="rulesPool">
         <h3>Rules:</h3>
         <div class="hours">
-          Open Hour<input type="text" name="timepicker" class="time_element" id="openHours"/></br>
-          Close Hour<input type="text" name="timepicker" class="time_element" id="closeHours"/>
+          Open Hour<input type="text" name="timepicker" class="time_element" id="openHours" required/></br>
+          Close Hour<input type="text" name="timepicker" class="time_element" id="closeHours" required/>
         </div>
         </br></br>
         <div class="rule">

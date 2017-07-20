@@ -6,13 +6,16 @@ const PoolSchema = mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  guest: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   address: String,
   numberOfGuests: Number,
   poolPic: String,
   price: Number,
   startDate: Date,
   endDate: Date,
-  price: Number,
   rules: {
     openHours:Date,
     closeHours:Date,

@@ -79,7 +79,7 @@ router.post('/signup', (req, res, next) => {
   });
 });
 
-router.get('/login', (req, res, next) => {
+router.get('/login', ensureLogin.ensureLoggedOut(),(req, res, next) => {
   res.render('auth/login', {
     "message": req.flash("error")
   });
@@ -92,12 +92,12 @@ router.post('/login', passport.authenticate('local-login', {
   passReqToCallback: true
 }));
 
-router.get("/logout", (req, res) => {
+router.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
   req.logout();
   res.redirect("auth/login");
 });
 
-router.get('/userProfile/:id', (req, res, next) => {
+router.get('/userProfile/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const userId = req.params.id;
   console.log(userId);
   User.findById(userId, (error, User) => {
@@ -111,7 +111,7 @@ router.get('/userProfile/:id', (req, res, next) => {
   });
 });
 
-router.get('/userProfile/:id/edit', (req, res, next) => {
+router.get('/userProfile/:id/edit', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const userId = req.params.id;
   User.findById(userId, (err, User) => {
     if(err) {
@@ -122,7 +122,7 @@ router.get('/userProfile/:id/edit', (req, res, next) => {
   });
 });
 
-router.post('userProfile/:id', (req,res,next) => {
+router.post('userProfile/:id', ensureLogin.ensureLoggedIn(), (req,res,next) => {
 
 });
 
