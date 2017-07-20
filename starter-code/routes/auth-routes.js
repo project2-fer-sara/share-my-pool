@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
+require('../config/passport.js')();
 
 const User = require('../models/User.js');
 
@@ -36,12 +37,12 @@ router.post('/signup', (req, res, next) => {
       return;
     }
 
-  if (password !== confirmPassword){
-    res.render('auth/signup', {
-      message: "password do not match"
-    });
-    return;
-  }
+    if (password !== confirmPassword) {
+      res.render('auth/signup', {
+        message: "password do not match"
+      });
+      return;
+    }
     User.findOne({
       email
     }, "email", (err, email) => {
@@ -57,11 +58,11 @@ router.post('/signup', (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const newUser = User({
-      name:name,
-      lastName:lastName,
+      name: name,
+      lastName: lastName,
       username: username,
       email: email,
-      password: password,
+      password: hashPass,
       confirmPassword: confirmPassword,
     });
 
@@ -71,18 +72,20 @@ router.post('/signup', (req, res, next) => {
           message: 'Ups, something went wrong. Please try again'
         });
       } else {
-        res.redirect('/');
+        res.redirect('/users');
       }
     });
   });
 });
 
-router.get('/login', (req,res,next) => {
-  res.render('auth/login', {"message": req.flash("error")});
+router.get('/login', (req, res, next) => {
+  res.render('auth/login', {
+    "message": req.flash("error")
+  });
 });
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: "/main",
+router.post('/login', passport.authenticate('local-login', {
+  successRedirect: "/users",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
