@@ -35,6 +35,7 @@ nav {
   padding: 10px 0;
   position: fixed;
   top: 0;
+  z-index: +1;
 }
 
 .search {
@@ -44,7 +45,7 @@ nav {
   width: 55%;
 }
 
-.search-input{
+.search-input {
   font-style: italic;
   border: none;
   background-color: transparent;
@@ -53,6 +54,12 @@ nav {
 .go-to-profile {
   float: left;
   width: 40%;
+}
+
+.go-to-add {
+  float: right;
+  margin-right: 150px;
+  margin-top: 25px;
 }
 
 h1, h2, h3 {
@@ -66,6 +73,10 @@ a {
 .signout {
   font-size: 0.8rem;
   margin-left: 10px;
+}
+
+main {
+  padding-top: 40px;
 }
 
 .container {
@@ -105,8 +116,17 @@ textarea:focus, input:focus {
   margin-top: 20px;
 }
 
+.btn {
+  margin-top: 20px;
+}
+
 .poolPage {
   margin: 5%;
+}
+
+.site-title {
+  float: left;
+  width: 60%;
 }
 
 .infoPool {
@@ -139,30 +159,36 @@ footer {
   background-color: #858c93;
   font-style: italic;
   text-align: center;
+  font-size: 0.8rem;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   bottom: 0;
 }
 
 <<<<<<< HEAD
-
 /*# sourceMappingURL=style.css.map */
-=======
-* {box-sizing:border-box}
+
+=======* {
+  box-sizing: border-box
+}
+
 
 /* Slideshow container */
+
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 800px;
   position: relative;
   margin: auto;
 }
 
 .mySlides {
-    display: none;
+  display: none;
 }
 
+
 /* Next & previous buttons */
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -177,20 +203,28 @@ footer {
   border-radius: 0 3px 3px 0;
 }
 
+
 /* Position the "next button" to the right */
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
+
 /* On hover, add a black background color with a little bit see-through */
+
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+
 /* Caption text */
+
 .text {
-  color: #f2f2f2;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-weight: bold;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -199,7 +233,9 @@ footer {
   text-align: center;
 }
 
+
 /* Number text (1/3 etc) */
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -208,9 +244,11 @@ footer {
   top: 0;
 }
 
+
 /* The dots/bullets/indicators */
+
 .dot {
-  cursor:pointer;
+  cursor: pointer;
   height: 13px;
   width: 13px;
   margin: 0 2px;
@@ -224,7 +262,9 @@ footer {
   background-color: #717171;
 }
 
+
 /* Fading animation */
+
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -233,12 +273,21 @@ footer {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
->>>>>>> 79e4e4aa50a2785323d5cd43775ce205937a0bb5
+
+>>>>>>>79e4e4aa50a2785323d5cd43775ce205937a0bb5
