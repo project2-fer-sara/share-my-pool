@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const rental = require('../models/Rental');
-const User = require('../models/User');
+const Rental = require('../models/Rental');
+// const User = require('../models/User');
+const Pool = require('../models/Pool');
+
 
 router.get('/', (req, res, next) => {
     res.render('addRental');
@@ -9,26 +11,26 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     const startDate = req.body.name;
-    const numberOfGuests = req.body.numberOfGuests;
-    let
-if (numberOfGuests > )
-});
+    const numberInvited = req.body.numberInvited;
 
-router.post('/', (req, res, next) => {
-  console.log(newUser._id);
+if (numberInvited > Pool.numberOfGuests || startDate < Pool.startDate || startDate > Pool.endDate ){
+  res.render('addRental', {
+    message: "You can't go with that many persons :("
+  });
+  return;
+}
   const newRental = new Rental({
     guest: newUser._id,
     startDate: req.body.startDate,
   });
-
-
   newRental.save((error, Rental) => {
     if (error) {
       next(error);
     } else {
-      res.redirect(`/addRental/confirmed`);
+      res.redirect(`/addRental/`);
     }
   });
 });
+
 
 module.exports = router;

@@ -11,7 +11,7 @@ const RentalSchema = mongoose.Schema({
     ref: 'User'
   },
   startDate: Date,
-  numberOfGuests: Number,
+  numberInvited: Number,
 });
 
 const Rental = mongoose.model('Rental', RentalSchema);
