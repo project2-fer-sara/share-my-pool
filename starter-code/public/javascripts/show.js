@@ -1,32 +1,21 @@
-$(document).ready(function(){
+// $(document).ready(function() {
 
-	var titleTag = document.getElementById('Pool');
-	var url = 'http://localhost:3000/api/' + titleTag.dataset.id;
+  function initMap() {
+    var myLatLng = {
+      lat: myPool.location.coordinates[0],
+      lng: myPool.location.coordinates[1]
+    };
 
-	$.ajax({
-    url: url,
-    method: 'GET',
-    success: printMapAndMarker,
-    error: function(error) {
-      console.log('error');
-    }
-  });
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
+      center: myLatLng
+    });
 
-  function printMapAndMarker(restaurant){
-  	var position = {
-  	  lat: pool.location.coordinates[0],
-  	  lng: pool.location.coordinates[1]
-  	};
-
-  	var map = new google.maps.Map(document.getElementById('map'), {
-  	  zoom: 15,
-  	  center: position
-  	});
-
-  	var marker = new google.maps.Marker({
-      position: position,
+    var marker = new google.maps.Marker({
+      position: myLatLng,
       map: map,
-      title: pool.name
+      title: 'Hello World!'
     });
   }
-});
+	initMap();
+// });
