@@ -1,0 +1,17 @@
+<div class="profileSite">
+  <div class="profileInfo">
+    <h2 id="profileName" data-id="<%= User._id %>"><%= User.username %></h2>
+    <div class="yourProfile">
+      <img src="<%= User.avatar %>" alt="avatar">
+      <p>Name:
+        <i><%= User.name %> <%= User.lastName %></i>
+      </p>
+      <p>username
+        <i><%= User.username %></i>
+      </p>
+    <p>email
+      <i><%= User.email %></i>
+    </p>
+    </div>
+  </div>
+</div>

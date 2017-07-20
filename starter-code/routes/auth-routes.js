@@ -5,6 +5,7 @@ const ensureLogin = require("connect-ensure-login");
 require('../config/passport.js')();
 
 const User = require('../models/User.js');
+//User id
 
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
@@ -94,6 +95,33 @@ router.post('/login', passport.authenticate('local-login', {
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
+});
+
+router.get('userProfile/:id', (req, res, next) => {
+  const userId = req.params.id;
+  User.findById(userId, (error, User) => {
+    if (error){
+      return next(error);
+    }else{
+      res.render('/userProfile', {
+        User:User,
+      });
+    }
+  });
+});
+
+router.get('/userProfile/:id/edit', (req, res, next) => {
+  User.findById(userId, (err, User) => {
+    if(err) {
+      return next(error);
+    }else {
+      res.render('/userProfile/updateProfile', {User: User});
+    }
+  });
+});
+
+router.post('userProfile/:id', (req,res,next) => {
+
 });
 
 module.exports = router;

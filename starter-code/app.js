@@ -23,6 +23,7 @@ const main = require('./routes/main');
 const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
+const addRental = require('./routes/addRent');
 
 
 const app = express();
@@ -56,7 +57,7 @@ app.use('/', auth);
 app.use('/', main);
 app.use('/addPool', addPool);
 app.use('/users', users);
-
+app.use('/addRental', addRental);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
