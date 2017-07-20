@@ -9,7 +9,11 @@ const PoolSchema = mongoose.Schema({
   address: String,
   numberOfGuests: Number,
   poolPic: String,
+  startDate: Date,
+  endDate: Date,
   rules: {
+    openHours:Date,
+    closeHours:Date,
     children: Boolean,
     petFriendly: Boolean,
     smoke: Boolean,

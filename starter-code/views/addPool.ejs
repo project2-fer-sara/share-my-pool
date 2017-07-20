@@ -4,9 +4,16 @@
     <form action="/addPool" class="addpool" method="post">
       Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!"> Nº Guests: <input type="text" name="numberOfGuests" placeholder="1"> Address: <input type="text" name="address" id="address" placeholder="False Street, Nº 123">
       <input type="button" id='geocoder' value='Locate'>
+      Start Date:<input type="date" name="startDate" id="poolStartDate">
+      End Date:<input type="date" name="endDate" id="poolEndDate">
       <br><br>
       <div class="rulesPool">
         <h3>Rules:</h3>
+        <div class="hours">
+          Open Hour<input type="text" name="timepicker" class="time_element" id="openHours"/>
+          Close Hour<input type="text" name="timepicker" class="time_element" id="closeHours"/>
+
+        </div>
         <div class="rule">
           Children allowed? <input type="checkbox" name="children" value="children">
         </div>
