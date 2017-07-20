@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Pool Details</title>
+  <title>Share-my-pool!</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -17,16 +17,15 @@
     </div>
   </nav>
   <main>
-    <%- body %>
-      <div class="bg"></div>
-  </main>
-  <% include shared/footer %>
     <script src="https://use.fontawesome.com/5d1e981c47.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoe_i9MzegqCBRxkOlDzuU9laxx00CSQA">
     </script>
-    <script type="text/javascript" src="/javascripts/new.js"></script>
-    <script type="text/javascript" src="/javascripts/show.js"></script>
+    <%- body %>
+      <div class="bg"></div>
+  </main>
+  <% include shared/footer %>
+
 </body>
 
 </html>
