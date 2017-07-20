@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
+
 require('../config/passport.js')();
 
 const User = require('../models/User.js');
+const Picture = require('../models/Picture.js');
 //User id
 
 const bcrypt = require('bcrypt');
@@ -65,6 +67,22 @@ router.post('/signup', (req, res, next) => {
       email: email,
       password: hashPass,
       confirmPassword: confirmPassword,
+    });
+
+    var upload = multer({ dest: '../public/uploads/' });
+    router.post('/upload', upload.single('photo'), function(req, res){
+
+      pic = new Picture({
+        name: req.body.name,
+        pic_path: `/uploads/${req.file.filename}`,
+        pic_name: req.file.originalname
+      });
+
+      pic.save((err) => {
+          res.render('auth/signup', {
+            message: 'upload correctly'
+          });
+      });
     });
 
     newUser.save((err) => {

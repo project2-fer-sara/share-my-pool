@@ -11,7 +11,7 @@ const passport = require('passport');
 const layouts = require('express-ejs-layouts');
 const session = require("express-session");
 const flash = require("connect-flash");
-
+const multer = require('multer');
 
 const User = require('./models/User');
 const Pool = require('./models/Pool');

@@ -1,5 +1,6 @@
 const mongoose     = require('mongoose');
 const Schema = mongoose.Schema;
+const Picture = require('../models/Picture');
 
 const PoolSchema = mongoose.Schema({
   host: {
@@ -12,7 +13,10 @@ const PoolSchema = mongoose.Schema({
   },
   address: String,
   numberOfGuests: Number,
-  poolPic: String,
+  poolPic: {
+    type: Schema.Types.ObjectId,
+    ref: "Picture"
+  },
   price: Number,
   startDate: Date,
   endDate: Date,

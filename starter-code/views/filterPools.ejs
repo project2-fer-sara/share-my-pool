@@ -1,0 +1,9 @@
+<ul>
+  <% pool.forEach((pool) => { %>
+    <li>
+      <%= pool.name %> - $<%= product.price %>
+      <img href="/poolDetails?id=<%= pool. %>">View Details</img>
+      <a href="/poolDetails?id=<%= pool._id %>">View Details</a>
+    </li>
+  <%  }) %>
+</ul>

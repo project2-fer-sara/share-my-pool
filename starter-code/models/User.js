@@ -13,7 +13,7 @@ const UserSchema = mongoose.Schema({
     default: 'GUEST',
   },
   facebookID: String,
-  avatar: String,
+  avatar:String,
 },{
   timestamps: {
     createdAt: 'created_at',
