@@ -10,7 +10,6 @@ router.post('/', (req, res, next) => {
   const newRental = new Rental({
     startDate: req.body.startDate,
     endDate: req.body.endDate,
-    price: String,
   });
 
   newRental.save((error, Rental) => {
