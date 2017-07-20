@@ -12,7 +12,6 @@ const RentalSchema = mongoose.Schema({
   },
   startDate: Date,
   endDate: Date,
-  price: Number,
 });
 
 const Rental = mongoose.model('Rental', RentalSchema);
