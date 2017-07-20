@@ -27,12 +27,6 @@
     <div class="hours">
     <i><%= Pool.openHours %></i>
     <i><%= Pool.closeHours %></i>
-<<<<<<< HEAD
-    </div>
-    <div class="">
-    <i>$<%= Pool.price %></i>      
-=======
->>>>>>> 7dc56b7ac02aabf29cd7ceb79e737db6b3031a62
     </div>
     <div class="rule">Children allowed?
       <i><%= Pool.children %></i>
@@ -45,6 +39,9 @@
     </div>
   </div>
   <div class="buttons">
+    <form action="/addRental/" method="GET">
+     <button class="rental-button" type="submit">Rent</button>
+    </form>
     <form action="/addPool/<%= Pool._id %>/edit" method="GET">
       <button class="edit-button" type="submit">Edit</button>
     </form>
@@ -56,9 +53,7 @@
     <input type="hidden" id="lon" name="longitude" placeholder="Longitude" value = "<%= Pool.location.coordinates[1] %>">
   </div>
 </div>
-<form class="buttons rent" action="/addRental/" method="GET">
- <button>Rent</button>
-</form>
+
 
 <div id="map"></div>
 <script type="text/javascript">
