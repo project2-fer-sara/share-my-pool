@@ -29,8 +29,8 @@ const filterPools = require('./routes/filterPools');
 
 const app = express();
 const dburl = process.env.MONGO_DB_URL;
-debug('Connecting to ${dburl}');
-mongoose.connect(dburl).then( () => debug('DB Connected!'));
+console.log('Connecting to ${dburl}');
+mongoose.connect(dburl).then( () => console.log('DB Connected!'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
