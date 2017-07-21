@@ -24,7 +24,7 @@ router.post('/signup', upload.single('photo'), (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   const confirmPassword = req.body.confirmPassword;
-  const avatar_path = 'uploads/'+req.file.filename || "";
+  const avatar_path = '../public/uploads/'+req.file.filename || "";
   const avatar_name = req.file.originalname || "";
 
   if (username === '' || email === '' || password === '') {
@@ -73,7 +73,7 @@ router.post('/signup', upload.single('photo'), (req, res, next) => {
       avatar_path: avatar_path,
       avatar_name: avatar_name,
     });
-
+    console.log(newUser);
     newUser.save((err) => {
       if (err) {
         res.render('auth/signup', {

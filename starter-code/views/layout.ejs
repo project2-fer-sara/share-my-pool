@@ -14,14 +14,17 @@
     </div>
     <% if(user) { %>
     <div class="go-to-profile">
+      <form action="/users" method="GET">
+        <button class="main-button" type="submit">Home</button>
+      </form>
+      <form action="/filterPools" method="GET">
+        <button class="pools-button" type="submit">Show Pools</button>
+      </form>
       <form action="/userProfile/<%= user._id %>" method="GET">
         <button class="profile-button" type="submit"><%= user.username %></button>
       </form>
       <a class="signout" href="/logout">Sign Out</a>
     </div>
-    <form action="/filterPools" method="GET">
-      <button class="pools-button" type="submit">Show Pools</button>
-    </form>
     <% } %>
     <% if(!user) { %>
     <div class="go-to-profile">
