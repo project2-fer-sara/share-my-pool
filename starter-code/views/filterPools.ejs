@@ -1,8 +1,11 @@
+<h1>Choose Your Pool</h1>
 <ul>
   <% pool.forEach((pool) => { %>
     <li>
-      <%= pool.name %> - $<%= product.price %>
+      <div class="adPool">
+      <%= pool.name %> - $<%= pool.price %>
       <a href="/poolDetails/?id=<%= pool._id %>">View Details</a>
+      </div>
     </li>
   <%  }) %>
 </ul>

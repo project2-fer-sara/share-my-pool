@@ -7,13 +7,14 @@ const UserSchema = mongoose.Schema({
   username: String,
   password: String,
   email: String,
+  avatar_path: String,
+  avatar_name: String,
   role:{
     type: String,
     enum:['HOST','GUEST'],
     default: 'GUEST',
   },
   facebookID: String,
-  avatar:String,
 },{
   timestamps: {
     createdAt: 'created_at',

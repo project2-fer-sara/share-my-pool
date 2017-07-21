@@ -1,6 +1,6 @@
 <div class="poolPage">
 <h1>Sign Up</h1>
-<form action="/signup" method="POST" id="form-container">
+<form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
   <label for="username">Username:</label>
   <input id="username" type="text" name="username" class="form-control" placeholder="joseperez100">
   <br><br>
@@ -14,11 +14,7 @@
   <input id="email" type="text" name="email"class="form-control"  placeholder="email">
   <br><br>
   <p>Upload your photo</p>
-  <form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="text" name="name">
     <input type="file" name="photo">
-    <input type="submit" value="Save">
-  </form>
   <br><br>
   <label for="password">Password:</label>
   <input id="password" type="password" name="password" class="form-control"  placeholder="Your Password">

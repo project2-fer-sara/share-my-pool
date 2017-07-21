@@ -12,12 +12,12 @@ const layouts = require('express-ejs-layouts');
 const session = require("express-session");
 const flash = require("connect-flash");
 const multer = require('multer');
+const MongoStore = require('connect-mongo')(session)
 
 const User = require('./models/User');
 const Pool = require('./models/Pool');
 const Rental = require('./models/Rental');
 const Review = require('./models/Review');
-const Picture = require('./models/Picture');
 
 const router = express.Router();
 const main = require('./routes/main');
@@ -45,7 +45,8 @@ app.use(layouts);
 app.use(session({
   secret: "pool-secret",
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
 require("./config/passport")();

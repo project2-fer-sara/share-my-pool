@@ -5,7 +5,7 @@ const User = require('../models/User');
 const ensureLogin = require("connect-ensure-login");
 
 /* GET users listing. */
-router.get('/', ensureLogin.ensureLoggedIn(), function(req, res, next) {
+router.get('/', ensureLogin.ensureLoggedIn('/login'), function(req, res, next) {
   res.render('userSite');
 });
 
