@@ -15,11 +15,19 @@
     <% if(user) { %>
     <div class="go-to-profile">
       <form action="/userProfile/<%= user._id %>" method="GET">
-        <button class="profile-button" type="submit">Profile</button>
+        <button class="profile-button" type="submit"><%= user.username %></button>
       </form>
       <a class="signout" href="/logout">Sign Out</a>
     </div>
-    <% } %> 
+    <% } %>
+    <% if(!user) { %>
+    <div class="go-to-profile">
+      <form action="/login" method="GET">
+        <button class="profile-button" type="submit">Log In</button>
+      </form>
+      <a class="signout" href="/logout">Sign Out</a>
+    </div>
+    <% } %>
   </nav>
   <main>
     <script src="https://use.fontawesome.com/5d1e981c47.js"></script>

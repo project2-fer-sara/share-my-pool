@@ -112,7 +112,7 @@ router.post('/login', passport.authenticate('local-login', {
 
 router.get("/logout", ensureLogin.ensureLoggedIn('/login'), (req, res) => {
   req.logout();
-  res.redirect("auth/login");
+  res.redirect("/");
 });
 
 router.get('/userProfile/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
