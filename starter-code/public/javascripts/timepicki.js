@@ -1,8 +1,4 @@
-/* 
- * Author: @senthil2rajan
- * plugin: timepicker
- * website: senthilraj.github.io/Timepicki
- */
+
 (function($) {
 
 	$.fn.timepicki = function(options) {
@@ -15,7 +11,7 @@
 			        if (tim < 10)
 			            tim = "0" + tim;
 
-			        
+
 			        mini = Math.min(Math.max(parseInt(mini), 0), 59);
 			        if (mini < 10)
 			            mini = "0" + mini;
@@ -99,7 +95,7 @@
 			var ele_next = $(this).next(".timepicker_wrap");
 			var ele_next_all_child = ele_next.find("div");
 			var inputs = ele_par.find('input');
-			
+
 			$('.reset_time').on("click", function(event) {
 				ele.val("");
 				close_timepicki();
@@ -112,8 +108,8 @@
 			    // timepicki inputs are valid, and that pressing
 			    // enter does not submit the form if the
 			    // input field on which timepicki is applied is a part of a form.
-			    
-			    
+
+
 			    // With that in mind. We proceed like this:
 			    // 1) If enter is pressed:
 			    //      i) Prevent default operations - form submission.
@@ -125,7 +121,7 @@
 			    //         just yet, because this function is a handler
 			    //         that runs before any text is rendered in the input
 			    //         box.
-			    //      ii) So, register a function validate() that will execute right 
+			    //      ii) So, register a function validate() that will execute right
 			    //          after the keypress character is rendered. All validation
                 //          is done inside validate().
                 //-----------------------------------------------------------------------------------
@@ -146,7 +142,7 @@
 
 
 
-			    // the grand father div specifies the type of 
+			    // the grand father div specifies the type of
 			    // input that we are dealing with. if the grandFatherDiv
 			    // has a class "time", then its a time input, if it has a class
 			    // "mins", then its a minutes input, and if it has a class "meridian"
@@ -163,13 +159,13 @@
 
                 // (2)
 			    // validate() function validates the
-			    // user input. 
+			    // user input.
 			    function validate() {
-			        
+
 			        var isValidNumber = /^\d+$/.test(input.val());
 			        var isEmpty = input.val() === "";
-			        
-                    
+
+
 			        if (grandfatherDiv.hasClass("time")) { /// HOUR
 
 
@@ -226,7 +222,7 @@
 			        }
 
 			    }
-			    
+
 			    // wrapValidate() ensures that validate()
 			    // is not called more than once. 'done'
                 // is a flag used to ensure this.
@@ -248,7 +244,7 @@
 
 
 
-					
+
 
 			});
 
@@ -259,7 +255,7 @@
 						set_value(event, !is_element_in_timepicki($(event.target)));
 					} else {
 						var ele_lef =  0;
-						
+
 						ele_next.css({
 							"top": ele_hei + "px",
 							"left": ele_lef + "px"
@@ -332,13 +328,13 @@
 				if(settings.show_meridian){
 					meri = ele_next.find(".mer_tx input").val();
 				}
-				
+
 				if (tim.length !== 0 && mini.length !== 0 && (!settings.show_meridian || meri.length !== 0)) {
 					// store the value so we can set the initial value
 					// next time the picker is opened
 					ele.attr('data-timepicki-tim', tim);
 					ele.attr('data-timepicki-mini', mini);
-					
+
 					if(settings.show_meridian){
 						ele.attr('data-timepicki-meri', meri);
 						// set the formatted value
@@ -406,7 +402,7 @@
 					mi = d.getMinutes();
 					mer = "AM";
 					if (settings.show_meridian){
-						if (ti == 0) { // midnight 
+						if (ti == 0) { // midnight
 							ti = 12;
 						} else if (ti == 12) { // noon
 							mer = "PM";

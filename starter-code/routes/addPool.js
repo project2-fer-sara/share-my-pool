@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Pool = require('../models/Pool');
-
+const User = require('../models/User');
 
 router.get('/', (req, res, next) => {
   res.render('addPool');

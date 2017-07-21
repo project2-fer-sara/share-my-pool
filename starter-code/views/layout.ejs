@@ -12,12 +12,14 @@
     <div class="search">
       <i class="fa fa-search" aria-hidden="true"></i><input class="search-input" type="text" name="search" value="search" placeholder="...search">
     </div>
+    <% if(user) { %>
     <div class="go-to-profile">
-      <form action="/userProfile/<%= User._id %>" method="GET">
+      <form action="/userProfile/<%= user._id %>" method="GET">
         <button class="profile-button" type="submit">Profile</button>
       </form>
       <a class="signout" href="/logout">Sign Out</a>
     </div>
+    <% } %> 
   </nav>
   <main>
     <script src="https://use.fontawesome.com/5d1e981c47.js"></script>
