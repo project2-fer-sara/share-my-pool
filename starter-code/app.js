@@ -17,6 +17,7 @@ const User = require('./models/User');
 const Pool = require('./models/Pool');
 const Rental = require('./models/Rental');
 const Review = require('./models/Review');
+const Picture = require('./models/Picture');
 
 const router = express.Router();
 const main = require('./routes/main');
@@ -24,7 +25,7 @@ const users = require('./routes/users');
 const auth = require('./routes/auth-routes');
 const addPool = require('./routes/addPool');
 const addRental = require('./routes/addRent');
-
+const filterPools = require('./routes/filterPools');
 
 const app = express();
 mongoose.connect('mongodb://localhost/sharepool');
@@ -57,8 +58,10 @@ app.use(passport.session());
 app.use('/', auth);
 app.use('/', main);
 app.use('/addPool', addPool);
+app.use('/filterPools', filterPools);
 app.use('/users', users);
 app.use('/addRental', addRental);
+
 // catch 404 and forward to error handler
 
 app.use( (req, res, next) => {
