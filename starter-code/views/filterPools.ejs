@@ -2,7 +2,7 @@
   <% pool.forEach((pool) => { %>
     <li>
       <%= pool.name %> - $<%= product.price %>
-      <a href="/poolDetails?id=<%= pool._id %>">View Details</a>
+      <a href="/poolDetails/?id=<%= pool._id %>">View Details</a>
     </li>
   <%  }) %>
 </ul>
