@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
+const multer = require('multer');
+var upload = multer({ dest: '../public/uploads/' });
 
 require('../config/passport.js')();
 
 const User = require('../models/User.js');
-const Picture = require('../models/Picture.js');
 //User id
 
 const bcrypt = require('bcrypt');
@@ -16,13 +17,15 @@ router.get('/signup', (req, res, next) => {
   res.render('auth/signup');
 });
 
-router.post('/signup', (req, res, next) => {
+router.post('/signup', upload.single('photo'), (req, res, next) => {
   const name = req.body.name;
   const lastName = req.body.lastName;
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
   const confirmPassword = req.body.confirmPassword;
+  const avatar_path = 'uploads/'+req.file.filename || "";
+  const avatar_name = req.file.originalname || "";
 
   if (username === '' || email === '' || password === '') {
     res.render('auth/signup', {
@@ -67,22 +70,8 @@ router.post('/signup', (req, res, next) => {
       email: email,
       password: hashPass,
       confirmPassword: confirmPassword,
-    });
-
-    var upload = multer({ dest: '../public/uploads/' });
-    router.post('/upload', upload.single('photo'), function(req, res){
-
-      pic = new Picture({
-        name: req.body.name,
-        pic_path: `/uploads/${req.file.filename}`,
-        pic_name: req.file.originalname
-      });
-
-      pic.save((err) => {
-          res.render('auth/signup', {
-            message: 'upload correctly'
-          });
-      });
+      avatar_path: avatar_path,
+      avatar_name: avatar_name,
     });
 
     newUser.save((err) => {
@@ -91,7 +80,12 @@ router.post('/signup', (req, res, next) => {
           message: 'Ups, something went wrong. Please try again'
         });
       } else {
-        res.redirect('/users');
+        req.login(newUser, function(err) {
+        if (err) {
+          console.log(err);
+        }
+        return res.redirect('/users');
+      });
       }
     });
   });
