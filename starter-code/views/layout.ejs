@@ -19,6 +19,9 @@
       </form>
       <a class="signout" href="/logout">Sign Out</a>
     </div>
+    <form action="/filterPools" method="GET">
+      <button class="pools-button" type="submit">Show Pools</button>
+    </form>
     <% } %>
     <% if(!user) { %>
     <div class="go-to-profile">

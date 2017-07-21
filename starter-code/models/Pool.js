@@ -12,10 +12,8 @@ const PoolSchema = mongoose.Schema({
   },
   address: String,
   numberOfGuests: Number,
-  poolPic: {
-    type: Schema.Types.ObjectId,
-    ref: "Picture"
-  },
+  poolPic_path: String,
+  poolPic_name: String,
   price: Number,
   startDate: Date,
   endDate: Date,
