@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 const multer = require('multer');
-var upload = multer({ dest: '../public/uploads/' });
+var upload = multer({ dest: './public/uploads/' });
 
 require('../config/passport.js')();
 
