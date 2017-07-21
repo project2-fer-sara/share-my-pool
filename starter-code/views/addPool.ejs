@@ -1,7 +1,7 @@
 <div class="poolPage">
   <div class="infoPool">
     <h2>Add Pool</h2>
-    <form action="/addPool" class="addpool" method="post">
+    <form action="/addPool" class="addpool" method="post" enctype="multipart/form-data">
       Title: <input type="text" name="poolAdName" placeholder="I'm renting my awesome pool!" required>
       Nº Guests: <input type="text" name="numberOfGuests" placeholder="1" required>
       Price ($): <input type="text" name="price" placeholder="10" required>
@@ -10,7 +10,9 @@
       </br></br>
       Start Date:<input type="date" name="startDate" id="poolStartDate" required>
       End Date:<input type="date" name="endDate" id="poolEndDate" required>
-
+      <br><br>
+      <p>Upload your photo</p>
+      <input type="file" name="photo">
       <br><br>
       <div class="rulesPool">
         <h3>Rules:</h3>
